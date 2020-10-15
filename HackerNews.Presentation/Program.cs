@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace HackerNews.API
+namespace HackerNews.Presentation
 {
     public class Program
     {

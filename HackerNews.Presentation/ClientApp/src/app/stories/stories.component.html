@@ -1,0 +1,67 @@
+<h1>{{ storyTypeName }} Stories</h1>
+
+<table class='table table-striped' *ngIf="stories && stories.length > 0">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Story</th>
+      <th>By</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let story of stories">
+      <td>{{ story.date | date:'short' }}</td>
+      <td>
+        <details>
+          <summary>
+            <a href="{{ story.url }}" *ngIf="story.url else storyNoLink" target="_blank" title="{{ story.title }}">{{ story.title }}</a>
+            <ng-template #storyNoLink>
+              <div>
+                {{ story.title }}
+              </div>
+            </ng-template>
+          </summary>
+
+          <p *ngIf="story.text">{{ story.text }}</p>
+
+          <form method="post" action="comment">
+            <textarea name="text" rows="6" cols="60" placeholder="This is all make believe. No actual comment will be posted. :)"></textarea>
+            <br/>
+            <input type="submit" value="add comment">
+          </form>
+        </details>
+      </td>
+      <td>{{ story.by }}</td>
+      <td>{{ story.score }}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4">
+        <div class="page-size-container">
+          <select [(ngModel)]='pageSize' (change)="onLoadMoreQuantityChanged($event)" class="page-size">
+            <optgroup label="Load more quantity">
+              <option>10</option>
+              <option>25</option>
+              <option>50</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <button class="btn-load-more" (click)="loadMore($event)" [disabled]="loading">Load More</button>
+      </td>
+    </tr>
+  </tfoot> 
+</table>
+
+<div [hidden]="stories && stories.length > 0 && !loading" class="loading-element">
+  <div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+  </div>
+  <em>Loading...</em>
+</div>

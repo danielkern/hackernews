@@ -1,21 +1,20 @@
-#Depending on the operating system of the host machines(s) that will build or run the containers, the image specified in the FROM statement may need to be changed.
-#For more information, please see https://aka.ms/containercompat
-
-FROM microsoft/dotnet:2.2-aspnetcore-runtime-nanoserver-1803 AS base
+FROM microsoft/dotnet:2.2-aspnetcore-runtime AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM microsoft/dotnet:2.2-sdk-nanoserver-1803 AS build
+FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
-COPY ["HackerNews.API/HackerNews.API.csproj", "HackerNews.API/"]
-RUN dotnet restore "HackerNews.API/HackerNews.API.csproj"
+COPY HackerNews.API/HackerNews.API.csproj HackerNews.API/
+COPY HackerNews.Service/HackerNews.Service.csproj HackerNews.Service/
+COPY HackerNews.Data/HackerNews.Data.csproj HackerNews.Data/
+RUN dotnet restore HackerNews.API/HackerNews.API.csproj
 COPY . .
-WORKDIR "/src/HackerNews.API"
-RUN dotnet build "HackerNews.API.csproj" -c Release -o /app
+WORKDIR /src/HackerNews.API
+RUN dotnet build HackerNews.API.csproj -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "HackerNews.API.csproj" -c Release -o /app
+RUN dotnet publish HackerNews.API.csproj -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
