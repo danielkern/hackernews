@@ -26,13 +26,12 @@ export class StoriesComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.setTitle(params);
       this.setStoryType(params);
-      this.resetPageCount();
+      this.resetStories();
       this.loadStories();
     });
   }
 
   loadMore(e): void {
-    this.loading = true;
     document.querySelector('.loading-element em').scrollIntoView();
     this.loadStories();
   }
@@ -42,6 +41,7 @@ export class StoriesComponent implements OnInit {
   }
 
   private loadStories(): void {
+    this.loading = true;
     this.storyService.get(this.storyType, this.lastStoryId, this.pageSize).subscribe(result => {
       this.loading = false;
       this.stories = this.stories.concat(result);
@@ -49,7 +49,8 @@ export class StoriesComponent implements OnInit {
     }, error => console.error(error));
   }
 
-  private resetPageCount(): void {
+  private resetStories(): void {
+    this.stories = [];
     this.lastStoryId = 0;
   }
 
