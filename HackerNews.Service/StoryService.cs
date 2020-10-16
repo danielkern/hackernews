@@ -71,7 +71,7 @@ namespace HackerNews.Service
         public async Task<Story> GetById(int id, string apiVersion = "v0")
         {
             HttpResponseMessage response;
-            Story story = null;
+            Story story;
 
             using (HttpClient client = new HttpClient())
             {

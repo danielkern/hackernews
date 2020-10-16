@@ -19,8 +19,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Tests", "4. Tests", "{EF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerNews.Presentation", "HackerNews.Presentation\HackerNews.Presentation.csproj", "{DF0A5BCA-8FE5-4A6E-AB25-611B6B2B397A}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C101BC83-E21C-4EDC-8744-BCD57A96ECEE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerNews.Service.Tests", "HackerNews.Service.Tests\HackerNews.Service.Tests.csproj", "{A10FD705-1327-4B6F-A2DF-5505AC16F891}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerNews.Data.Tests", "HackerNews.Data.Tests\HackerNews.Data.Tests.csproj", "{A9E584B9-9538-4EFC-B44F-8BDF760E4C76}"
@@ -47,10 +45,6 @@ Global
 		{DF0A5BCA-8FE5-4A6E-AB25-611B6B2B397A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF0A5BCA-8FE5-4A6E-AB25-611B6B2B397A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF0A5BCA-8FE5-4A6E-AB25-611B6B2B397A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C101BC83-E21C-4EDC-8744-BCD57A96ECEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C101BC83-E21C-4EDC-8744-BCD57A96ECEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C101BC83-E21C-4EDC-8744-BCD57A96ECEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C101BC83-E21C-4EDC-8744-BCD57A96ECEE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A10FD705-1327-4B6F-A2DF-5505AC16F891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A10FD705-1327-4B6F-A2DF-5505AC16F891}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A10FD705-1327-4B6F-A2DF-5505AC16F891}.Release|Any CPU.ActiveCfg = Release|Any CPU

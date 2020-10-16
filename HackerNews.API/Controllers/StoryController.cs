@@ -41,7 +41,7 @@ namespace HackerNews.API.Controllers
 
         // GET api/story/5
         [HttpGet("search")]
-        public ActionResult<string> Search([FromQuery]string query)
+        public ActionResult<string> Search([FromQuery] string query)
         {
             return "value";
         }

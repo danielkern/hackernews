@@ -17,11 +17,11 @@ namespace HackerNews.Service.Tests
     [TestClass]
     public class StoryServiceTest
     {
-        private IStoryService _storyService;
-        CacheManager _cacheManager;
-        private Mock<IMemoryCache> _mockMemoryCache;
-        private Mock<ICacheManager> _mockCacheManager;
-        private Mock<IStoryService> _mockStoryService;
+        private readonly IStoryService _storyService;
+        private readonly CacheManager _cacheManager;
+        private readonly Mock<IMemoryCache> _mockMemoryCache;
+        private readonly Mock<ICacheManager> _mockCacheManager;
+        private readonly Mock<IStoryService> _mockStoryService;
 
         public StoryServiceTest()
         {

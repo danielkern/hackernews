@@ -6,14 +6,14 @@ namespace HackerNews.API.Controllers
     {
 
         #region [Private/Protected properties]
-       
+
         protected string _apiVersion = "v0";
 
         #endregion [Private/Protected properties]
 
         public BaseApiController()
         {
-            
+
         }
     }
 }
