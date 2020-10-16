@@ -29,10 +29,17 @@ namespace HackerNews.Service
             IEnumerable<int> pagedStoryIds = lastItemId == 0 ? storyIds.Take(pageSize) : storyIds.Where(id => id < lastItemId).Take(pageSize);
 
             Parallel.ForEach(pagedStoryIds, async id => {
-                Story story = await GetById(id, apiVersion);
-                if (story != null)
+                try
                 {
-                    stories.Add(story);
+                    Story story = await GetById(id, apiVersion);
+                    if (story != null)
+                    {
+                        stories.Add(story);
+                    }
+                }
+                catch
+                {
+                    //log exception
                 }
             });
 
