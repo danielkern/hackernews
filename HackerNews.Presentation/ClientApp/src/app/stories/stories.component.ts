@@ -66,7 +66,7 @@ export class StoriesComponent implements OnInit {
       case 'best':
         this.storyType = StoryTypes.BestStories;
         break;
-      case 'job':
+      case 'jobs':
         this.storyType = StoryTypes.JobStories;
         break;
       case 'show':

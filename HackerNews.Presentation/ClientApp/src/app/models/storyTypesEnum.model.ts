@@ -4,5 +4,5 @@ export enum StoryTypes {
   TopStories = 'TopStories',
   ShowStories = 'ShowStories',
   AskStories = 'AskStories',
-  JobStories = 'JobStories',
+  JobStories = 'JobStories'
 }

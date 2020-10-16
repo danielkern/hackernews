@@ -24,12 +24,7 @@ import { StoriesComponent } from './stories/stories.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'stories/:storyType', component: StoriesComponent },
-      //{ path: 'stories/jobs', component: StoriesComponent },
-      //{ path: 'stories/ask', component: StoriesComponent },
-      //{ path: 'stories/polls', component: StoriesComponent },
-      //{ path: 'stories/show', component: StoriesComponent },
-      //{ path: 'stories/best', component: StoriesComponent },
+      { path: 'stories/:storyType', component: StoriesComponent }
     ])
   ],
   providers: [],

@@ -22,7 +22,7 @@ namespace HackerNews.Data.Enums
         AskStories = 4,
 
         [Description("jobstories")]
-        JobStories = 5,
+        JobStories = 5
     }
 
     public enum StoryType: byte
