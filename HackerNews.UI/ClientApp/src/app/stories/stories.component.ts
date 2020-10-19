@@ -18,6 +18,7 @@ export class StoriesComponent implements OnInit {
   public storyType: StoryTypes;
   public lastStoryId: number;
   public loading: boolean;
+  public searchQuery: string;
 
   constructor(private storyService: StoryService, private route: ActivatedRoute, private stringHelper: StringHelper) {
   }
@@ -38,6 +39,10 @@ export class StoriesComponent implements OnInit {
 
   onLoadMoreQuantityChanged(e) {
     this.pageSize = e.currentTarget.value as number;
+  }
+
+  onSearch() {
+    
   }
 
   private loadStories(): void {

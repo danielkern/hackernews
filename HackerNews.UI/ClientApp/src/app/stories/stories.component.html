@@ -8,9 +8,17 @@
       <th>By</th>
       <th>Score</th>
     </tr>
+    <tr>
+      <td colspan="4">
+        <div class="form-group">
+          <label for="search-bar">Search Text</label>
+          <input id="search-bar" name="search-bar" type="text" class="form-control search-bar" [(ngModel)]="searchQuery" (input)="onSearch()" placeholder="Search" />
+        </div>
+      </td>
+    </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let story of stories" class="story-row">
+    <tr *ngFor="let story of stories | searchfilter: searchQuery" class="story-row">
       <td>{{ story.date | date:'short' }}</td>
       <td>
         <details>
