@@ -4,10 +4,12 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import {
   TestBed
 } from '@angular/core/testing';
+import { environment } from '../../environments/environment';
+
 describe('StoryService', () => {
   let service: StoryService;
   let httpMock: HttpTestingController;
-  const baseUrl: string = 'https://localhost:44377';
+  const baseUrl: string = environment.production ? 'https://hacker-news-api-app.azurewebsites.net' : 'https://localhost:44377';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
